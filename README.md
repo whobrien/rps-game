@@ -39,3 +39,7 @@ Generate two files index.html and rps.js.
 1. computerPlay -> return a 'Rock', 'Paper', or 'Scissors' via the Math.random()
 
 2. playRound() -> check playerSelection until someone wins.
+
+index2.html and rps2.js are Rock Paper Scissors by alerts.
+
+index.html and rps.js is the final version per the requiremnts.

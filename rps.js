@@ -2,7 +2,7 @@
 //let computerSelection = ''; // create var for computer
 //let computerRandom = ''; //create var for number Random
 //const pSelection = document.getElementById('guessField'); // Get Guessing Field
-const pButton = document.getElementById('guessButton'); //Guessing Button
+//const pButton = document.getElementsByClassName('rock'); //Guessing Button
 const roundDisplay = document.getElementById('display'); //Display for who won round
 const displayCOM = document.getElementById('displayCom'); //Keep track of computer score
 const displayPlyr = document.getElementById('displayPlyr'); //Keep track of plyr score
@@ -12,7 +12,9 @@ let scoreCat = 0;
 let scorePlyr = 0;
 let scoreCom = 0;
 
-pButton.addEventListener('click', gameFive); //click to play
+const pPick = window.addEventListener('click', gameFive); //click to play
+
+console.log(pPick);
 
 function computerPlay() {  // Function to Return a random Rock, Paper, Scissor selection
     computerRandom = Math.floor(Math.random() * 3); //Random int between 0-2
@@ -53,7 +55,7 @@ function gameFive() {
     let scorePlyr = 0;
     let scoreCom = 0;
     
-    for (let i = 0; i < 5; i++) {
+    //for (let i = 0; i < 5; i++) {
         let result = playRound(); 
 
         if (result === 'Cat') {
@@ -72,4 +74,4 @@ function gameFive() {
             displayCOM.textContent = `Computer: ${scoreCom}`;
         }
     }
-}
+// }

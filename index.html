@@ -16,6 +16,9 @@
               color: white;
               padding: 3px;
             }
+            .input {
+              display: flex;
+            }
           </style>
     </head>
     <body>
@@ -31,8 +34,22 @@
             <li>Paper beats Rock.</li>
         </ul>
         <br>
-        <div class="form">
-            <button id='guessButton'>Click Me to Play!</button>
+        <div class="input">
+          <div class="rock">
+            <img src="img/rock.jpeg" class="rock">
+            <br>
+            <button class="rock">Rock!</button>
+          </div>
+          <div class="paper">
+            <img src="img/paper.png" class="paper">
+            <br>
+            <button class="paper">Paper!</button>
+          </div>
+          <div class="scissors">
+            <img src="img/scissors.jpg" class="scissors">
+            <br>
+            <button class="scissors">Scissors!</button>
+          </div>
         </div>
 
         <div id="display"></div>

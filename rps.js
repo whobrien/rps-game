@@ -12,7 +12,7 @@ let scoreCat = 0;
 let scorePlyr = 0;
 let scoreCom = 0;
 
-const pPick = window.addEventListener('click', gameFive); //click to play
+const pPick = document.addEventListener('click', gameFive); //click to play
 
 console.log(pPick);
 

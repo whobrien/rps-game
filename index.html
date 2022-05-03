@@ -12,6 +12,10 @@
               min-width: 480px;
               margin: 0 auto;
             }
+            img {
+              width: auto;
+              height: 300px;
+            }
             .lastResult {
               color: white;
               padding: 3px;
@@ -24,7 +28,7 @@
     <body>
         <h1>Let's play Rock, Paper, Scissors!</h1>
 
-        <p>Here is your chance to finally beat a computer at something.  Please type in Rock, Paper or Scissors to see if you can beat me.</p>
+        <p>Here is your chance to finally beat a computer at something.  Please select Rock, Paper or Scissors to see if you can beat me.</p>
         <br>
         <h2>Remember!</h2>
         <br>
@@ -36,27 +40,27 @@
         <br>
         <div class="input">
           <div class="rock">
-            <img src="img/rock.jpeg" class="rock" style="width: 200; height: 400;;">
+            <img src="img/rock.jpeg" class="rock">
             <br>
-            <button id="rockbutton" class="rock">Rock!</button>
+            <button id="rps" class="rock">Rock</button>
           </div>
           <div class="paper">
             <img src="img/paper.png" class="paper">
             <br>
-            <button id="paperbutton" class="paper">Paper!</button>
+            <button id="rps" class="paper">Paper</button>
           </div>
           <div class="scissors">
             <img src="img/scissors.jpg" class="scissors">
             <br>
-            <button id="scissorsbutton" class="scissors">Scissors!</button>
+            <button id="rps" class="scissors">Scissors</button>
           </div>
         </div>
 
         <div id="display"></div>
-        <p id='displayPlyr'></p>
-        <p id='displayCom'></p>
-        <p id='displayCat'></p>
-        <p id='rounds'></p>
+        <p id='displayPlyr'>You: 0</p>
+        <p id='displayCom'>Me: 0</p>
+        <p id='displayCat'>Cat: 0</p>
+        <p id='rounds'>Round: 0</p>
         <script src='rps.js'></script>
     </body>
 </html>

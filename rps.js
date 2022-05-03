@@ -8,13 +8,13 @@ const displayCOM = document.getElementById('displayCom'); //Keep track of comput
 const displayPlyr = document.getElementById('displayPlyr'); //Keep track of plyr score
 const displayCat = document.getElementById('displayCat'); //Keep track of pushes score
 const roundTrack = document.getElementById('rounds'); //Keep track of who won round score
-let scoreCat = 0;
-let scorePlyr = 0;
-let scoreCom = 0;
+const pushed = document.querySelectorAll('button');
 
-const pPick = document.addEventListener('click', gameFive); //click to play
-
-console.log(pPick);
+for (i of pushed) {
+    i.addEventListener('click', function() {
+        gameFive(this);
+    });
+}
 
 function computerPlay() {  // Function to Return a random Rock, Paper, Scissor selection
     computerRandom = Math.floor(Math.random() * 3); //Random int between 0-2
@@ -31,9 +31,9 @@ function computerPlay() {  // Function to Return a random Rock, Paper, Scissor s
 }
 
 
-function playRound() {
+function playRound(userGuess) {
     const guessCom = computerPlay();
-    const guessPlyr = window.prompt('Type Rock, Paper or Scissors, then press OK.');
+    const guessPlyr = userGuess;
 
     if (guessPlyr.toLowerCase() === guessCom.toLowerCase()) {
         roundDisplay.textContent = `You Picked ${guessPlyr}.  I picked ${guessCom}. Push, Try Again!`;
@@ -50,28 +50,42 @@ function playRound() {
 
 }
 
-function gameFive() {
-    let scoreCat = 0;
-    let scorePlyr = 0;
-    let scoreCom = 0;
+function gameFive(event) {
+    const pick = event.textContent;
     
     //for (let i = 0; i < 5; i++) {
-        let result = playRound(); 
+        let result = playRound(pick); 
 
         if (result === 'Cat') {
-            scoreCat++;
+            let dcat = displayCat.textContent;
+            let cat = dcat[5];
+            cat++;
             console.log('Cat Won');
-            displayCat.textContent = `Cat: ${scoreCat}`;
+            displayCat.textContent = `Cat: ${cat}`;
+            let sel = roundTrack.textContent[7];
+            sel++;
+            roundTrack.textContent = `Round: ${sel}`;
+            
         }
         else if (result === 'Player') {
-            scorePlyr++;
-            console.log('Player One');
-            displayPlyr.textContent = `Player: ${scorePlyr}`;
+            let dplyr = displayPlyr.textContent;
+            let player = dplyr[5];
+            player++;
+            console.log('Player Won');
+            displayPlyr.textContent = `You: ${player}`;
+            let sel = roundTrack.textContent[7];
+            sel++;
+            roundTrack.textContent = `Round: ${sel}`;
         }
         else {
-            scoreCom++;
+            let dcom = displayCOM.textContent;
+            let com = dcom[4];
+            com++;
             console.log('Computer Won');
-            displayCOM.textContent = `Computer: ${scoreCom}`;
+            displayCOM.textContent = `Me: ${com}`;
+            let sel = roundTrack.textContent[7];
+            sel++;
+            roundTrack.textContent = `Round: ${sel}`;
         }
     }
 // }
